@@ -25,7 +25,7 @@ ctx.stroke();
 
 function draw({ key }) {
   //increment the hue
-  hue = hue + 1;
+  hue = hue + 5;
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   console.log(key);
   //start the path
@@ -61,6 +61,18 @@ function handleKey(event) {
 }
 
 //clear/shake function
+function clearCanvas() {
+  canvas.classList.add("shake");
+  ctx.clearRect(0, 0, width, height);
+  canvas.addEventListener(
+    "animationend",
+    function() {
+      canvas.classList.remove("shake");
+    },
+    { once: true },
+  );
+}
 
 //listen for arrow keys
 window.addEventListener("keydown", handleKey);
+shakebutton.addEventListener("click", clearCanvas);
