@@ -60,7 +60,7 @@ function handleKey(event) {
   }
 }
 
-//clear/shake function
+//create clear/shake function
 function clearCanvas() {
   canvas.classList.add("shake");
   ctx.clearRect(0, 0, width, height);
